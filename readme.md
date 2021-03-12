@@ -6,7 +6,7 @@ Use:
 - clonar
 - npm install //instala las dependencias
 - cambiar el remoto de GutHub (importante)
-- npm start //for dev server
+- npm start //for dev server open in (localhost:5000)
 - npm run build //para compilar
 
 La estrucutra de directorios esta orientada a facilitar la division de codigo usando HTML,JavaScript y CSS  
