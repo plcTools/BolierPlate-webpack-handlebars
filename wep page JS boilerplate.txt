@@ -1,0 +1,22 @@
+ejecutar en linea de comandos
+npm init
+git init
+crear archivo .gitignore
+
+instalar las siguientes librerias
+npm i webpack (empaquetador de objetos)
+npm i webpack-cli (lo usa webpack)
+npm i webpack-dev-server
+crear archivo: webpack.config.js (contiene la info para el build de la aplicacion)
+
+instalar plugins
+npm i html-webpack-plugins
+
+instalar loaders:
+npm i style-loader
+npm i css-loader
+npm i mini-css-extract-plugin
+
+ejecutar:
+npx webpack (crea el build unicamente)
+npx webpack-serve (puede ser tambien webpack s) (crea un servidor en memoria que ejecuta la app en cada cambio de codigo, este metodo no crea el build)
