@@ -10,12 +10,12 @@ Use:
 
 La estrucutra de directorios esta orientada a facilitar la division de codigo usando HTML,JavaScript y CSS  
 Dentro de la carpeta **partials** se deben crear los distinos componentes a utilizar en el desarrollo,  
-creando dentro una carpeta que contenga un archivo HTML con **ejemplo.handlebars**, tambien puede contener sus propios CSS y jS  
-Cada archivo JS debe importarse en archivo **index.js** de la carpeta **src** para que los mismo se incluyan al  
-realizarce el build  
+creando dentro una carpeta que contenga un archivo HTML con **ejemplo.handlebars**, tambien puede contener sus propios CSS y jS. 
 
-Dicho archivo debe importarse en el **index.handlebars** de la carpeta **src.** de la siguiente manera  
-**{{ > ejemplo.handlebars}}**
+> Cada archivo JS debe importarse en archivo **index.js** de la carpeta **src** para que los mismo se incluyan al realizarce el build.   
+
+> Dicho archivo debe importarse en el **index.handlebars** de la carpeta **src.** de la siguiente manera  
+**{{ > ejemplo.handlebars}}**. 
 
 **Pasos seguidos para la creacion desde cero**  
 
