@@ -1,4 +1,4 @@
-# BoilerPlate basico con Handlebars y Webpack
+# BoilerPlate basico con Handlebars, Webpack y babel
 Compila html css javascript e imagenes de varios formatos  
 
 Listo para fincionar  
@@ -31,6 +31,7 @@ creando dentro una carpeta que contenga un archivo HTML con **ejemplo.handlebars
 - npm i webpack-cli (lo usa webpack)
 - npm i webpack-dev-server
 - crear archivo: webpack.config.js (contiene la info para el build de la aplicacion)
+- npm i babel
 
 **Instalar plugins**  
 npm i html-webpack-plugins (incluye los html en el build)
@@ -41,6 +42,10 @@ npm i html-webpack-plugins (incluye los html en el build)
 - npm i mini-css-extract-plugin (separa los css)
 - npm i file-loader (carga las imagenes)
 - npm i image-webpack-loader (reduce imagenes y otras opciones)
+- npm i babel-loader
+- npm i @babel/core
+- npm i @babel/polyfill
+- npm i babel/preset-env
 
 **Ejecutar:**  
 - npx webpack (crea el build unicamente)  
@@ -63,6 +68,19 @@ module.exports = {
     },
     module: {
         rules: [
+                   /* loader de babel para usar codigo moderno en javascript */
+            {
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            ['@babel/preset-env', { targets: "defaults" }]
+                        ]
+                    }
+                }
+            },
             {
                 test: /\.(sa|sc|c)ss$/i,
                 use: [

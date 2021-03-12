@@ -3,16 +3,35 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path')
 module.exports = {
 
-    entry: './src/index.js',
+    entry: {
+        index: [
+          "@babel/polyfill",
+          './src/index.js'
+        ],
+      },
     output: {
         path: path.resolve(__dirname, 'build'),/* name of build folder */
         filename: 'bundle.js',/* name of output file on build */
+        clean: true,/* clean old folder ej: /dist  */
     },
     devServer: {
         port: 5000
     },
     module: {
         rules: [
+            /* loader de babel para usar codigo moderno en javascript */
+            {
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            ['@babel/preset-env', { targets: "defaults" }]
+                        ]
+                    }
+                }
+            },
             {
                 test: /\.(sa|sc|c)ss$/i,
                 use: [
@@ -24,7 +43,7 @@ module.exports = {
             },
 
             {
-                test:/\.handlebars/,
+                test: /\.handlebars/,
                 loader: 'handlebars-loader'
             },
 
