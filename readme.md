@@ -5,6 +5,7 @@ Listo para fincionar
 Use:
 - clonar
 - npm install //instala las dependencias
+- cambiar el remoto de GutHub (importante)
 - npm start //for dev server
 - npm run build //para compilar
 
